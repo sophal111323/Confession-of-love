@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <title>Confession of love</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <img src="https://media3.giphy.com/media/v1.Y2lkPTZjMDliOTUyeWNhc2twMHdibWpvNzM2YzQydGN5ZzJydWVkZnJpZXgxMmlkMnZvciZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/7y4Nc95399hsr24oYc/giphy.gif" alt="love" class="animation">
+    <h1>បងស្រឡាញ់អូនខ្លាំងណាស់💞 តើអូនស្រឡាញ់បងទេ?</h1>
+    <div class="buttons">
+      <button id="yesBtn">Yes</button>
+      <button id="noBtn">No</button>
+    </div>
+    <p id="response"></p>
+  </div>
+
+  <script>
+    // ✅ Handle button clicks
+    document.getElementById('yesBtn').addEventListener('click', () => {
+      document.getElementById('response').textContent = "មែនហ៎babe🥹💞";
+    });
+
+    document.getElementById('noBtn').addEventListener('click', () => {
+      document.getElementById('response').textContent = "ហេតុអ្វី?💔";
+    });
+  </script>
+</body>
+</html>
