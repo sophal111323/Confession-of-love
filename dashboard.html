@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard Logs</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f4f4f4; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+    th { background: #333; color: white; }
+    tr:nth-child(even) { background: #f9f9f9; }
+  </style>
+</head>
+<body>
+  <h2>Log អ្នកប្រើប្រាស់</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Answer</th>
+        <th>IP</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <tbody id="logTable"></tbody>
+  </table>
+
+  <script>
+    fetch('/logs')
+      .then(res => res.json())
+      .then(data => {
+        const tbody = document.getElementById('logTable');
+        data.forEach((log, index) => {
+          const row = `<tr>
+            <td>${index + 1}</td>
+            <td>${log.answer}</td>
+            <td>${log.ip}</td>
+            <td>${new Date(log.timestamp).toLocaleString()}</td>
+          </tr>`;
+          tbody.innerHTML += row;
+        });
+      });
+  </script>
+</body>
+</html>
